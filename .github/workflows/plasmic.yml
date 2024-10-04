@@ -36,7 +36,7 @@ jobs:
         uses: plasmicapp/plasmic-action@master
         with:
           run: init
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.event.client_payload.data.branch }}
           directory: ${{ github.event.client_payload.data.directory }}
           project_id: ${{ github.event.client_payload.data.projectId }}
@@ -52,7 +52,7 @@ jobs:
         uses: plasmicapp/plasmic-action@master
         with:
           run: sync
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.event.client_payload.data.branch }}
           directory: ${{ github.event.client_payload.data.directory }}
           project_id: ${{ github.event.client_payload.data.projectId }}
@@ -74,6 +74,6 @@ jobs:
         uses: repo-sync/pull-request@v2
         if: ${{ steps.sync.outputs.new_branch }}
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: ${{ steps.sync.outputs.new_branch }}
           destination_branch: ${{ github.event.client_payload.data.branch }}
