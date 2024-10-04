@@ -23,7 +23,6 @@
     "next": "14.2.13",
     "npm": "^10.8.3",
     "react": "^18",
-    "react-beautiful-dnd-next": "^11.0.5",
     "react-dom": "^18",
     "react-query": "^3.39.3",
     "react-toastify": "^10.0.5"
